@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-// MARK: -Meme struct
+// MARK: - Meme struct
 
 struct Meme {
     var topTextField: String?
