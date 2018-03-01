@@ -13,4 +13,8 @@ import UIKit
 
 class SentMemesTableViewController: UITableViewController {
     
+    // MARK: Properties
+    
+    var memes: [Meme]!
+    
 }
