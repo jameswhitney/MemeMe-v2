@@ -139,7 +139,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Sent Memes" id="BUz-i5-EyO">
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="kxq-q4-s0f"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tyF-e1-SdG"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tyF-e1-SdG">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" id="jql-Se-PXE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iqQ-QJ-Uc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
