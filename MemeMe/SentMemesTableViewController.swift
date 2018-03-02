@@ -17,4 +17,9 @@ class SentMemesTableViewController: UITableViewController {
     
     var memes: [Meme]!
     
+    // This function saves generated memes to AppDelegate Meme array
+    override func viewDidLoad() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        memes = appDelegate.memes
+    }
 }

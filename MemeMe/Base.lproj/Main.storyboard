@@ -21,8 +21,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="bwU-o8-rNH" kind="relationship" relationship="viewControllers" id="MK3-4Z-UYJ"/>
-                        <segue destination="hij-h7-ZiK" kind="relationship" relationship="viewControllers" id="nsH-r6-Vdt"/>
+                        <segue destination="hij-h7-ZiK" kind="relationship" relationship="viewControllers" id="S3b-eZ-glI"/>
+                        <segue destination="bwU-o8-rNH" kind="relationship" relationship="viewControllers" id="LCo-aR-4Z0"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LRy-XC-3vR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -98,10 +98,10 @@
             </objects>
             <point key="canvasLocation" x="73" y="-368"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Sent Memes Table View Controller-->
         <scene sceneID="Uj5-rl-0N8">
             <objects>
-                <tableViewController id="Kpq-ww-xry" sceneMemberID="viewController">
+                <tableViewController id="Kpq-ww-xry" customClass="SentMemesTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="p0Z-Eq-0Aq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
