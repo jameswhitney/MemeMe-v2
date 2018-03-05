@@ -16,6 +16,7 @@ class SentMemesTableViewController: UITableViewController {
     // MARK: Properties
     
     var memes: [Meme]!
+    @IBOutlet var memeView: UITableView!
     
     // This function saves generated memes to AppDelegate Meme array
     override func viewDidLoad() {
@@ -35,21 +36,20 @@ class SentMemesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "SentMemesTableViewCell")!
-        let meme = self.memes[(indexPath as NSIndexPath).row]
+        _ = self.memes[(indexPath as NSIndexPath).row]
         
-        
-        cell.imageView?.image = meme.memedImage
-        cell.textLabel?.text = ""
-        
-        // TODO: Set cell text detail labels
-        if let detailTextLabel = cell.detailTextLabel {
-            detailTextLabel.text = "detail"
-        }
+        cell.imageView?.image = memes[indexPath.row].memedImage
+        cell.textLabel?.text = "\(memes[indexPath.row].topTextField!)\(memes[indexPath.row].bottomTextField!)"
         
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let detailController = storyboard?.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
+        detailController.meme = self.memes[(indexPath as NSIndexPath).row]
+        self.navigationController!.pushViewController(detailController, animated: true)
+        
+        
     }
 }
