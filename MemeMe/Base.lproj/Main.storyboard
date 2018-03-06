@@ -66,7 +66,7 @@
         <!--Sent Memes Collection View Controller-->
         <scene sceneID="PHl-ri-XDI">
             <objects>
-                <collectionViewController id="xDb-03-y7s" customClass="SentMemesCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="SentMemesCollectionViewController" id="xDb-03-y7s" customClass="SentMemesCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="sFF-T6-ybM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,7 +99,7 @@
                                     </subviews>
                                 </view>
                                 <connections>
-                                    <outlet property="sentMemeImage" destination="f3J-mk-Yg1" id="okR-t0-JTN"/>
+                                    <outlet property="sentMemeImage" destination="xaU-nH-Rml" id="Y15-hg-VvY"/>
                                     <outlet property="sentMemeLabel" destination="f3J-mk-Yg1" id="6IN-Bh-kZE"/>
                                 </connections>
                             </collectionViewCell>

@@ -19,7 +19,29 @@ class SentMemesCollectionViewController: UICollectionViewController {
     
     // This function saves generated memes to AppDelegate Meme array
     override func viewDidLoad() {
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return self.memes.count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SentMemesCollectionViewCell", for: indexPath) as! SentMemeCollectionViewCell
+        let meme = self.memes[(indexPath as NSIndexPath).row]
+        
+        cell.sentMemeLabel.text = meme.topTextField
+        cell.sentMemeImage!.image = meme.memedImage
+        
+        return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        // TODO: Add code to get detail VC, populate VC with data, and present controller
     }
 }
