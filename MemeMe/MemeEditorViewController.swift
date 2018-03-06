@@ -51,9 +51,13 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
+        toolBar.isHidden = true
+        
+        self.performSegue(withIdentifier: "popToRoot", sender: self)
         
         print("Meme added to array in AppDelegate")
     }
+
     
     // Render text and image and return both as one UIImage.
     func generateMemedImage() -> UIImage {
@@ -86,6 +90,7 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
         
         memedImage = generateMemedImage()
         let activityViewController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
         self.present(activityViewController, animated: true, completion: nil)
         
         activityViewController.completionWithItemsHandler = {

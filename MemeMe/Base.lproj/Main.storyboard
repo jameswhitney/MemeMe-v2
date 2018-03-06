@@ -14,7 +14,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="L0c-iw-4f1">
             <objects>
-                <tabBarController id="1DL-GT-rYS" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabController" id="1DL-GT-rYS" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hbH-t6-Bog">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -276,6 +276,7 @@
                         <outlet property="shareButton" destination="Bag-82-5Th" id="FDj-Bf-H2y"/>
                         <outlet property="toolBar" destination="LJR-6m-yon" id="5dN-ZL-Wx9"/>
                         <outlet property="topText" destination="WiN-fK-CTu" id="UvQ-aU-aXZ"/>
+                        <segue destination="1DL-GT-rYS" kind="show" identifier="popToRoot" id="UtX-pH-sSd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
