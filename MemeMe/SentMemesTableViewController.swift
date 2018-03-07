@@ -43,17 +43,9 @@ class SentMemesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SentMemesTableViewCell")!
         let memeObject = memes[indexPath.row]
         
-<<<<<<< HEAD
-        cell.imageView?.image = memes[indexPath.row].memedImage
-        cell.textLabel?.text = "\(memes[indexPath.row].topTextField!)...\(memes[indexPath.row].bottomTextField!)"
-||||||| merged common ancestors
-        cell.imageView?.image = memes[indexPath.row].memedImage
-        cell.textLabel?.text = "\(memes[indexPath.row].topTextField!) \(memes[indexPath.row].bottomTextField!)"
-=======
         cell.imageView?.image = memeObject.memedImage
-        cell.textLabel?.text = "\(memeObject.topTextField!) \(memeObject.bottomTextField!)"
->>>>>>> table-view-dev
-        
+        cell.textLabel?.text = "\(memeObject.topTextField!)...\(memeObject.bottomTextField!)"
+
         return cell
     }
     
