@@ -32,10 +32,10 @@ class SentMemesCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SentMemesCollectionViewCell", for: indexPath) as! SentMemeCollectionViewCell
-        let meme = self.memes[(indexPath as NSIndexPath).row]
+        let memeObject = memes[indexPath.item]
         
-        cell.sentMemeLabel.text = meme.topTextField
-        cell.sentMemeImage!.image = meme.memedImage
+        cell.sentMemeLabel.text = memeObject.topTextField
+        cell.sentMemeImage?.image = memeObject.memedImage
         
         return cell
     }
@@ -43,5 +43,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         // TODO: Add code to get detail VC, populate VC with data, and present controller
+
+        
     }
 }
