@@ -51,9 +51,9 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
-        toolBar.isHidden = true
         
         self.performSegue(withIdentifier: "popToRoot", sender: self)
+        print("Back to TableView")
         
         print("Meme added to array in AppDelegate")
     }

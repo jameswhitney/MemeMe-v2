@@ -32,10 +32,24 @@ class SentMemesCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SentMemesCollectionViewCell", for: indexPath) as! SentMemeCollectionViewCell
+<<<<<<< HEAD
         let memeObject = memes[indexPath.item]
+||||||| merged common ancestors
+        let meme = self.memes[(indexPath as NSIndexPath).row]
+=======
+        let memeObject = self.memes[(indexPath as NSIndexPath).item]
+>>>>>>> table-view-dev
         
+<<<<<<< HEAD
         cell.sentMemeLabel.text = memeObject.topTextField
         cell.sentMemeImage?.image = memeObject.memedImage
+||||||| merged common ancestors
+        cell.sentMemeLabel.text = meme.topTextField
+        cell.sentMemeImage!.image = meme.memedImage
+=======
+        cell.sentMemeLabel.text = memeObject.topTextField
+        cell.sentMemeImage!.image = memeObject.memedImage
+>>>>>>> table-view-dev
         
         return cell
     }
