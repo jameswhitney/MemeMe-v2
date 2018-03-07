@@ -14,11 +14,21 @@ import UIKit
 class SentMemesCollectionViewController: UICollectionViewController {
     
     // MARK: Properties
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     var memes: [Meme]!
     
+    
+    
     // This function saves generated memes to AppDelegate Meme array
     override func viewDidLoad() {
+        
+        let space: CGFloat = 3.0
+        let dimension = (self.view.frame.size.width - (2 * space)) / 3.0
+        
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
