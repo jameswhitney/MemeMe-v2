@@ -198,12 +198,13 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
     
     // cancelButton resets view and text to default settings.
     @IBAction func resetMemeView(_ sender: Any) {
+
+        self.performSegue(withIdentifier: "cancelEditor", sender: self)
+//        topText.text = "TOP"
+//        bottomText.text = "BOTTOM"
+//        originalImage.image = nil
         
-        topText.text = "TOP"
-        bottomText.text = "BOTTOM"
-        originalImage.image = nil
-        
-        hideOrShowShareButton()
+//        hideOrShowShareButton()
         
     }
     

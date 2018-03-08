@@ -44,10 +44,8 @@ class SentMemesCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SentMemesCollectionViewCell", for: indexPath) as! SentMemeCollectionViewCell
         let memeObject = memes[indexPath.item]
 
-        cell.sentMemeLabel.text = memeObject.topTextField
-        cell.sentMemeImage!.image = memeObject.memedImage
+        cell.sentMemeImage?.image = memeObject.memedImage
 
-        
         return cell
     }
     
