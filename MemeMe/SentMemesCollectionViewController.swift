@@ -22,7 +22,8 @@ class SentMemesCollectionViewController: UICollectionViewController {
     // This function saves generated memes to AppDelegate Meme array
     override func viewDidLoad() {
         
-        let space: CGFloat = 1.0
+        let space: CGFloat = 0.5
+        
         let width = (self.view.frame.size.width -  (2 * space))
         let height = (self.view.frame.size.height - (2 * space)) / 2.0
         
