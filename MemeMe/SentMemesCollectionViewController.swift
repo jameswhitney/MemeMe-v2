@@ -19,16 +19,16 @@ class SentMemesCollectionViewController: UICollectionViewController {
     var memes: [Meme]!
     
     
-    
     // This function saves generated memes to AppDelegate Meme array
     override func viewDidLoad() {
         
-        let space: CGFloat = 3.0
-        let dimension = (self.view.frame.size.width - (2 * space)) / 3.0
+        let space: CGFloat = 1.0
+        let width = (self.view.frame.size.width -  (2 * space))
+        let height = (self.view.frame.size.height - (2 * space)) / 2.0
         
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
-        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+        flowLayout.itemSize = CGSize(width: width, height: height)
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
@@ -57,7 +57,5 @@ class SentMemesCollectionViewController: UICollectionViewController {
         detailController.meme = memes[(indexPath as NSIndexPath).row]
         
         navigationController!.pushViewController(detailController, animated: true)
-
-        
     }
 }

@@ -63,7 +63,8 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
     func generateMemedImage() -> UIImage {
         
         hideTopAndBottomBars(true)
-
+        
+        
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
@@ -244,4 +245,39 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
     
 
 }
+
+
+//extension UIImageView {
+//    
+//    func displayedImageFrame () -> CGRect {
+//        
+//        let boundsWidth = bounds.size.width
+//        let boundsHeight = bounds.size.height
+//        let imageSize = image!.size
+//        let imageRatio = imageSize.width / imageSize.height
+//        let viewRation = boundsWidth / boundsHeight
+//        
+//        // Portrait image
+//        if (viewRation > imageRatio) {
+//            let scale = boundsHeight / imageSize.height
+//            let width = scale * imageSize.width
+//            let topLeftX = (boundsWidth - width) * 0.5
+//            return CGRect(x: topLeftX, y: 0.0, width: width, height: boundsHeight)
+//            
+//        } else {
+//            let scale = boundsWidth / imageSize.width
+//            let height = scale * imageSize.height
+//            let topLeftY = (boundsHeight - height) * 0.5
+//            return CGRect(x: 0.0, y: topLeftY, width: boundsWidth, height: height)
+//        }
+//    }
+//}
+
+
+
+
+
+
+
+
 

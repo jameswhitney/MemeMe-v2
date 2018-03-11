@@ -56,4 +56,8 @@ class SentMemesTableViewController: UITableViewController {
         self.navigationController!.pushViewController(detailController, animated: true)
         
     }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
 }
