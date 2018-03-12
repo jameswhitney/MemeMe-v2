@@ -34,17 +34,45 @@ class SentMemesCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let space: CGFloat = 3.0
-
-        let width = (self.view.frame.size.width -  (2 * space)) / 2.0
-        let height = (self.view.frame.size.height - (2 * space)) / 6.0
-
-        flowLayout.minimumInteritemSpacing = 0.5
-        flowLayout.minimumLineSpacing = 0.5
-        flowLayout.itemSize = CGSize(width: width, height: height)
+        flowLayout(size: view.frame.size)
+        
+//        let space: CGFloat = 3.0
+//
+//        if self.view.frame.size.width < self.view.frame.size.height {
+//
+//            let width = (self.view.frame.size.width -  (2 * space)) / 2.0
+//            let height = (self.view.frame.size.height - (2 * space)) / 6.0
+//            flowLayout.itemSize = CGSize(width: width, height: height)
+//
+//        } else {
+//
+//            let width = (self.view.frame.size.width -  (2 * space)) / 6.0
+//            let height = (self.view.frame.size.height - (2 * space)) / 2.0
+//            flowLayout.itemSize = CGSize(width: width, height: height)
+//        }
+//
+//        flowLayout.minimumInteritemSpacing = 0.5
+//        flowLayout.minimumLineSpacing = 0.5
+        
 
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
+    }
+    
+//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+//        super.viewWillTransition(to: size, with: coordinator)
+//        self.collectionViewLayout.invalidateLayout()
+//        adjustFlowLayout(size: size)
+//    }
+    
+    func flowLayout(size: CGSize) {
+        
+        let space: CGFloat = 3.0
+        let dimension: CGFloat = size.width > size.height ? (size.width - (4 * space)) / 5.0 : (size.width - (2 * space)) / 3.0
+        
+        flowLayout.minimumLineSpacing = space
+        flowLayout.minimumInteritemSpacing = 1.0
+        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
     }
     
     
