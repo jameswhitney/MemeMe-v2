@@ -63,7 +63,7 @@
             </objects>
             <point key="canvasLocation" x="-967" y="-342"/>
         </scene>
-        <!--Sent Memes Collection View Controller-->
+        <!--Sent Memes-->
         <scene sceneID="PHl-ri-XDI">
             <objects>
                 <collectionViewController storyboardIdentifier="SentMemesCollectionViewController" id="xDb-03-y7s" customClass="SentMemesCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,7 +109,13 @@
                             <outlet property="delegate" destination="xDb-03-y7s" id="j3D-cD-uqF"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="K2S-kg-24d"/>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="K2S-kg-24d">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="n2w-Eg-UaX">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" id="0x9-nH-kwq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="flowLayout" destination="SW1-T2-UAE" id="hSx-ZS-VxK"/>
                     </connections>
@@ -189,7 +195,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iqQ-QJ-Uc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="73" y="376"/>
+            <point key="canvasLocation" x="42" y="393"/>
         </scene>
         <!--Meme Editor View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -301,7 +307,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="917.60000000000002" y="375.56221889055473"/>
+            <point key="canvasLocation" x="978" y="393"/>
         </scene>
     </scenes>
     <resources>
@@ -309,6 +315,7 @@
         <image name="table_30x30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="jql-Se-PXE"/>
         <segue reference="EeF-JN-Xi2"/>
     </inferredMetricsTieBreakers>
 </document>
