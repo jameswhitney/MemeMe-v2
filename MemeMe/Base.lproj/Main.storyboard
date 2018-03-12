@@ -132,12 +132,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J7a-z4-J15">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J7a-z4-J15">
                                 <rect key="frame" x="16" y="20" width="343" height="627"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="J7a-z4-J15" firstAttribute="top" secondItem="YMv-gc-gBH" secondAttribute="top" id="OnL-Lg-pyx"/>
+                            <constraint firstItem="YMv-gc-gBH" firstAttribute="bottom" secondItem="J7a-z4-J15" secondAttribute="bottom" constant="20" id="fAg-gW-qu7"/>
+                            <constraint firstItem="J7a-z4-J15" firstAttribute="leading" secondItem="YMv-gc-gBH" secondAttribute="leading" constant="16" id="had-AR-2Zq"/>
+                            <constraint firstItem="YMv-gc-gBH" firstAttribute="trailing" secondItem="J7a-z4-J15" secondAttribute="trailing" constant="16" id="pRh-wi-s5R"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="YMv-gc-gBH"/>
                     </view>
                     <connections>
