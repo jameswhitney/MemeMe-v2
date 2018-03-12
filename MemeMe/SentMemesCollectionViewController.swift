@@ -18,23 +18,37 @@ class SentMemesCollectionViewController: UICollectionViewController {
     
     var memes: [Meme]!
     
+    // Hide the status bar
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     
     // This function saves generated memes to AppDelegate Meme array
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        memes = appDelegate.memes
+        collectionView?.reloadData()
+    }
+
     override func viewDidLoad() {
-        
-        let space: CGFloat = 0.5
-        
-        let width = (self.view.frame.size.width -  (2 * space))
-        let height = (self.view.frame.size.height - (2 * space)) / 2.0
-        
-        flowLayout.minimumInteritemSpacing = space
-        flowLayout.minimumLineSpacing = space
+        super.viewDidLoad()
+        let space: CGFloat = 3.0
+
+        let width = (self.view.frame.size.width -  (2 * space)) / 2.0
+        let height = (self.view.frame.size.height - (2 * space)) / 6.0
+
+        flowLayout.minimumInteritemSpacing = 0.25
+        flowLayout.minimumLineSpacing = 0.25
         flowLayout.itemSize = CGSize(width: width, height: height)
-        
+
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
     }
     
+    
+
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return self.memes.count

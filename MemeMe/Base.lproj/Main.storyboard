@@ -72,32 +72,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SW1-T2-UAE">
-                            <size key="itemSize" width="145" height="131"/>
+                            <size key="itemSize" width="131" height="117"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="SentMemesCollectionViewCell" id="anZ-Ia-nCs" customClass="SentMemeCollectionViewCell" customModule="MemeMe" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="145" height="131"/>
+                                <rect key="frame" x="0.0" y="0.0" width="131" height="117"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="145" height="131"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="131" height="117"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xaU-nH-Rml">
-                                            <rect key="frame" x="0.0" y="0.0" width="145" height="131"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="131" height="117"/>
                                         </imageView>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="xaU-nH-Rml" firstAttribute="top" secondItem="anZ-Ia-nCs" secondAttribute="top" id="MAf-0e-Xka"/>
-                                    <constraint firstItem="xaU-nH-Rml" firstAttribute="top" secondItem="anZ-Ia-nCs" secondAttribute="top" id="S6x-Ze-BOe"/>
-                                    <constraint firstAttribute="trailing" secondItem="xaU-nH-Rml" secondAttribute="trailing" id="abu-e3-rKl"/>
-                                    <constraint firstItem="xaU-nH-Rml" firstAttribute="leading" secondItem="anZ-Ia-nCs" secondAttribute="leading" id="cGb-Oa-oi5"/>
-                                    <constraint firstItem="xaU-nH-Rml" firstAttribute="top" secondItem="anZ-Ia-nCs" secondAttribute="top" id="dZo-17-QpH"/>
-                                    <constraint firstAttribute="bottom" secondItem="xaU-nH-Rml" secondAttribute="bottom" id="ilY-J4-Yv5"/>
-                                    <constraint firstItem="xaU-nH-Rml" firstAttribute="leading" secondItem="anZ-Ia-nCs" secondAttribute="leading" id="zT1-qF-sKn"/>
+                                    <constraint firstItem="xaU-nH-Rml" firstAttribute="leading" secondItem="anZ-Ia-nCs" secondAttribute="leading" id="4yi-UX-s9k"/>
+                                    <constraint firstItem="xaU-nH-Rml" firstAttribute="top" secondItem="anZ-Ia-nCs" secondAttribute="top" id="Jug-S6-qwB"/>
+                                    <constraint firstAttribute="trailing" secondItem="xaU-nH-Rml" secondAttribute="trailing" id="X6r-vJ-PNy"/>
+                                    <constraint firstItem="xaU-nH-Rml" firstAttribute="top" secondItem="anZ-Ia-nCs" secondAttribute="top" id="fOV-Kb-kmU"/>
+                                    <constraint firstAttribute="bottom" secondItem="xaU-nH-Rml" secondAttribute="bottom" id="lZX-T4-3Cf"/>
+                                    <constraint firstAttribute="trailing" secondItem="xaU-nH-Rml" secondAttribute="trailing" id="mfK-EB-5ko"/>
+                                    <constraint firstItem="xaU-nH-Rml" firstAttribute="leading" secondItem="anZ-Ia-nCs" secondAttribute="leading" id="wyK-HZ-G3r"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="sentMemeImage" destination="xaU-nH-Rml" id="Y15-hg-VvY"/>
@@ -202,15 +202,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hev-ez-5rT">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WiN-fK-CTu" userLabel="Top Text Field">
-                                <rect key="frame" x="0.0" y="64" width="375" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Vyn-dd-oXk"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3M3-cA-BZV">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
@@ -250,6 +241,15 @@
                                 <rect key="frame" x="0.0" y="553" width="375" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Tbs-Dt-eaa"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WiN-fK-CTu" userLabel="Top Text Field">
+                                <rect key="frame" x="0.0" y="64" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Vyn-dd-oXk"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
