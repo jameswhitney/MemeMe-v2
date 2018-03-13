@@ -186,7 +186,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Sent Memes" id="BUz-i5-EyO">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="kxq-q4-s0f"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="tyF-e1-SdG">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" id="jql-Se-PXE"/>
@@ -234,18 +233,19 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="LJR-6m-yon">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="RNg-sv-1Wp"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="qwI-dB-FL7"/>
                                     <barButtonItem systemItem="camera" id="pYA-FZ-a9e">
                                         <connections>
                                             <action selector="imageSourceFromCamera:" destination="BYZ-38-t0r" id="xsn-S1-l11"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="OPa-4a-pjp"/>
                                     <barButtonItem title="Album" width="96" id="jJC-BH-w2o">
                                         <connections>
                                             <action selector="imageSourceFromPhotoLibrary:" destination="BYZ-38-t0r" id="JlP-86-qpD"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1C1-ZI-oPG"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="e5l-XE-dbl"/>
                                 </items>
                             </toolbar>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xnN-oe-Muo" userLabel="Bottom Text Field">
