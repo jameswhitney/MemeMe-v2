@@ -43,6 +43,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     func flowLayout(size: CGSize) {
         
         let space: CGFloat = 3.0
+        // This implementation was found on the iOS ND forums
         let dimension: CGFloat = size.width > size.height ? (size.width - (4 * space)) / 6.0 : (size.width - (2 * space)) / 3.0
         
         flowLayout.minimumLineSpacing = space
