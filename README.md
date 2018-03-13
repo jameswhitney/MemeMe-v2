@@ -11,7 +11,8 @@ A working knowledge of the Swift language and Xcode.
 
 ### Installing
 
-Once you have git installed, create a folder where you want the project to live, open terminal and git clone the URL of the working repo. 
+Once you have git installed, create a folder where you want the project to live, open terminal and git clone the URL of the working repo. Or simply download project as zip file
+and run the MemeMe.xcodeproj file.
 
 ## Built With
 
