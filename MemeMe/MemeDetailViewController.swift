@@ -9,11 +9,19 @@
 import Foundation
 import UIKit
 
+// MARK: - MemeDetailViewController
+
 class MemeDetailViewController: UIViewController {
     
+    // MARK: Properties
+    
+    var meme: Meme?
+    
+    // MARK: Outlets
     
     @IBOutlet weak var memeImage: UIImageView!
-    var meme: Meme?
+
+    // MARK: Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
