@@ -197,15 +197,10 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
         
     }
     
-    // cancelButton resets view and text to default settings.
+    // cancelButton brings brings user to SentMemesTableViewController
     @IBAction func resetMemeView(_ sender: Any) {
 
         self.performSegue(withIdentifier: "cancelEditor", sender: self)
-//        topText.text = "TOP"
-//        bottomText.text = "BOTTOM"
-//        originalImage.image = nil
-        
-//        hideOrShowShareButton()
         
     }
     
@@ -242,36 +237,7 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
         NotificationCenter.default.removeObserver(self)
         NotificationCenter.default.removeObserver(self)
     }
-    
-
 }
-
-
-//extension UIImageView {
-//    
-//    func displayedImageFrame () -> CGRect {
-//        
-//        let boundsWidth = bounds.size.width
-//        let boundsHeight = bounds.size.height
-//        let imageSize = image!.size
-//        let imageRatio = imageSize.width / imageSize.height
-//        let viewRation = boundsWidth / boundsHeight
-//        
-//        // Portrait image
-//        if (viewRation > imageRatio) {
-//            let scale = boundsHeight / imageSize.height
-//            let width = scale * imageSize.width
-//            let topLeftX = (boundsWidth - width) * 0.5
-//            return CGRect(x: topLeftX, y: 0.0, width: width, height: boundsHeight)
-//            
-//        } else {
-//            let scale = boundsWidth / imageSize.width
-//            let height = scale * imageSize.height
-//            let topLeftY = (boundsHeight - height) * 0.5
-//            return CGRect(x: 0.0, y: topLeftY, width: boundsWidth, height: height)
-//        }
-//    }
-//}
 
 
 
