@@ -38,7 +38,8 @@ class SentMemesCollectionViewController: UICollectionViewController {
         memes = appDelegate.memes
     }
     
-    // Create custom cells for SentMemesCollectionViewController
+    // Create custom cells for SentMemesCollectionViewController.
+    // Create three memes in table view per row
     func flowLayout(size: CGSize) {
         
         let space: CGFloat = 3.0
