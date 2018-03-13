@@ -15,12 +15,17 @@ class SentMemesTableViewController: UITableViewController {
     
     // MARK: Properties
     
+    let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
     var memes: [Meme]!
+    
+    // MARK: Outlets
+    
     @IBOutlet var memeView: UITableView!
+    
+    // MARK: Life Cycle
     
     // This function saves generated memes to AppDelegate Meme array
     override func viewDidLoad() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
     }
     
@@ -33,8 +38,6 @@ class SentMemesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        // Return number of elements in Meme array
-        print(self.memes.count)
         return self.memes.count
     }
     
@@ -57,17 +60,18 @@ class SentMemesTableViewController: UITableViewController {
         
     }
     
+    // MARK: Utilities
+    
     // Implement swipe gesture to delete selected meme(s) from tableView, collectionView and Meme array in AppDelegate
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.memes.remove(at: indexPath.row)
             
             // Update the Meme array in AppDelegate and tableView to reflect deletion of selected row index
             memes = appDelegate.memes
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.reloadData()
         }
     }
-
 }

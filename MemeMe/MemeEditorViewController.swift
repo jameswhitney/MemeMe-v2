@@ -13,6 +13,21 @@ import UIKit
 
 class MemeEditorViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
     
+    // MARK: Properties
+    
+    let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+    var memedImage: UIImage!
+    
+    // Class property for setting text attributes
+    let memeTextAttributes: [String: Any] = [
+        
+        NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
+        NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
+        NSAttributedStringKey.backgroundColor.rawValue: UIColor.clear,
+        NSAttributedStringKey.font.rawValue: UIFont(name: "Impact", size: 40)!,
+        NSAttributedStringKey.strokeWidth.rawValue : NSNumber(value: -3.0)
+    ]
+    
     // MARK: Outlets
     
     @IBOutlet weak var originalImage: UIImageView!
@@ -25,41 +40,25 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var toolBar: UIToolbar!
     
-    var memedImage: UIImage!
-    
-    // Class property for setting text attributes.
-    let memeTextAttributes: [String: Any] = [
-        
-        NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
-        NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
-        NSAttributedStringKey.backgroundColor.rawValue: UIColor.clear,
-        NSAttributedStringKey.font.rawValue: UIFont(name: "Impact", size: 40)!,
-        NSAttributedStringKey.strokeWidth.rawValue : NSNumber(value: -3.0)
-    ]
+    // MARK: Generate, Share, Save Meme
     
     // Hide the status bar
     override var prefersStatusBarHidden: Bool {
         return true
     }
     
-    // Initialize Meme class struct to save edited meme state.
-    // The implementaion for this function came from the iOS ND forum.
+    // Initialize Meme class struct to save edited meme state
+    // The implementaion for this function came from the iOS ND forum
     func save() {
         
         let meme = Meme(topTextField: topText.text!, bottomTextField: bottomText.text!, originalImage: originalImage.image!, memedImage: memedImage)
-        
-        let object = UIApplication.shared.delegate
-        let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
         
         self.performSegue(withIdentifier: "popToRoot", sender: self)
-        print("Back to TableView")
-        
-        print("Meme added to array in AppDelegate")
     }
 
     
-    // Render text and image and return both as one UIImage.
+    // Render text and image and return both as one UIImage
     func generateMemedImage() -> UIImage {
         
         hideTopAndBottomBars(true)
@@ -87,22 +86,6 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
         
     }
     
-    @IBAction func shareMeme(_ sender: UIBarButtonItem) {
-        
-        memedImage = generateMemedImage()
-        let activityViewController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = self.view
-        self.present(activityViewController, animated: true, completion: nil)
-        
-        activityViewController.completionWithItemsHandler = {
-            (activityType: UIActivityType?, completed: Bool, returnedItemds: [Any]?, error: Error?) -> Void in
-            if completed {
-                self.save()
-            }
-        }
-    }
-    
-    
     // MARK: Life Cycle
     
     override func viewDidLoad() {
@@ -113,7 +96,7 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
         
     }
     
-    // Check if camera source is available. If not disable camera button.
+    // Check if camera source is available. If not disable camera button
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
@@ -123,7 +106,7 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
         hideOrShowShareButton()
         
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         
         super.viewWillDisappear(animated)
@@ -149,14 +132,14 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
         }
     }
     
-    // Once return is selected exit text field editing.
+    // Once return is selected exit text field editing
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
 
     
-    // This function decides decides where image for meme is selected based on sourceType.
+    // This function decides decides where image for meme is selected based on sourceType
     func pickAnImageFrom(sourceType: UIImagePickerControllerSourceType) {
         
         let imagePicker = UIImagePickerController()
@@ -167,21 +150,34 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
     
     // MARK: Actions
     
-    // Camera button launches camera.
+    @IBAction func shareMeme(_ sender: UIBarButtonItem) {
+        
+        memedImage = generateMemedImage()
+        let activityViewController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        self.present(activityViewController, animated: true, completion: nil)
+        
+        activityViewController.completionWithItemsHandler = {
+            (activityType: UIActivityType?, completed: Bool, returnedItemds: [Any]?, error: Error?) -> Void in
+            if completed {
+                self.save()
+            }
+        }
+    }
+    
+    // Camera button launches camera
     @IBAction func imageSourceFromCamera(_ sender: Any) {
         pickAnImageFrom(sourceType: .camera)
     }
     
-    // Album button launches Photo Library.
+    // Album button launches Photo Library
     @IBAction func imageSourceFromPhotoLibrary(_ sender: Any) {
         pickAnImageFrom(sourceType: .photoLibrary)
     }
     
-    
-    
     // MARK: Utilities
     
-    // Function takes user selection from a dictionary of images and displays selected image as originalImage.
+    // Function takes user selection from a dictionary of images and displays selected image as originalImage
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         dismiss(animated: true, completion: nil)
@@ -204,7 +200,7 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
         
     }
     
-    // Function shifts view up so bottomText can be seen while using keyboard.
+    // Function shifts view up so bottomText can be seen while using keyboard
     @objc func keyboardWillShow(_ notification: Notification) {
         
         self.view.frame.origin.y = bottomText.isFirstResponder ? -getKeyboardHeight(notification) : 0
@@ -216,7 +212,7 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
         view.frame.origin.y = 0
     }
     
-    // Function gets heighth of keyboard and returns value to keyboardWillShow.
+    // Function gets heighth of keyboard and returns value to keyboardWillShow
     func getKeyboardHeight(_ notification: Notification) -> CGFloat {
         
         let userInfo = notification.userInfo
@@ -224,14 +220,14 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
         return keyboardSize.cgRectValue.height
     }
     
-    // Notifies view that keyboard will appear.
+    // Notifies view that keyboard will appear
     func subscribeToKeyboardNotifications() {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
     }
     
-    // Notifies view that keyboard will be dismissed.
+    // Notifies view that keyboard will be dismissed
     func unsubscribeFromKeyboardNotifications() {
         
         NotificationCenter.default.removeObserver(self)
