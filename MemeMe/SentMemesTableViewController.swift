@@ -26,11 +26,12 @@ class SentMemesTableViewController: UITableViewController {
     
     // This function saves generated memes to AppDelegate Meme array
     override func viewDidLoad() {
+        super.viewDidLoad()
         memes = appDelegate.memes
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
         memeView.reloadData()
     }
     
@@ -56,7 +57,7 @@ class SentMemesTableViewController: UITableViewController {
         
         let detailController = storyboard?.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
         detailController.meme = self.memes[(indexPath as NSIndexPath).row]
-        self.navigationController!.pushViewController(detailController, animated: true)
+        navigationController!.pushViewController(detailController, animated: true)
         
     }
     

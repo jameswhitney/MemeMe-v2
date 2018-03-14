@@ -30,8 +30,4 @@ class MemeDetailViewController: UIViewController {
             memeImage?.image = meme.memedImage
         }
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewDidDisappear(true)
-    }
 }

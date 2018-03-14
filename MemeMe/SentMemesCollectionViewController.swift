@@ -41,13 +41,12 @@ class SentMemesCollectionViewController: UICollectionViewController {
     // Create custom cells for SentMemesCollectionViewController.
     // Create three memes in table view per row
     func flowLayout(size: CGSize) {
-        
-        let space: CGFloat = 3.0
+        let divisorForNumOfCellsPerRow: CGFloat = 3.0
         // This implementation was found on the iOS ND forums
-        let dimension: CGFloat = size.width > size.height ? (size.width - (4 * space)) / 6.0 : (size.width - (2 * space)) / 3.0
+        let dimension: CGFloat = size.width > size.height ? (size.width - (4 * divisorForNumOfCellsPerRow)) / 6.0 : (size.width - divisorForNumOfCellsPerRow) / 3.0
         
-        flowLayout.minimumLineSpacing = space
-        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = divisorForNumOfCellsPerRow
+        flowLayout.minimumInteritemSpacing = divisorForNumOfCellsPerRow
         flowLayout.itemSize = CGSize(width: dimension, height: dimension)
     }
     
